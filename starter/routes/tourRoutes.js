@@ -7,7 +7,7 @@ const tourController = require('./../controllers/tourController');
 //ROUTERS
 const router = express.Router();
 
-router.param('id', tourController.checkID);
+// router.param('id', tourController.checkID);
 //create a checkBody middleware
 //check f body contains the name and price property
 //if not, send back 400 (bad request)
@@ -21,5 +21,5 @@ router
 router
   .route('/')
   .get(tourController.getAllTours)
-  .post(tourController.checkBody, tourController.createTour);
+  .post(tourController.createTour);
 module.exports = router;
